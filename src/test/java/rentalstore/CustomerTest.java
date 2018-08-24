@@ -20,8 +20,8 @@ public class CustomerTest {
         System.out.println(statement);
 
         assertEquals("<H1>Rentals for <EM>Jerry</EM></H1><P>\n" +
-                "Titanic: 3.0<BR>\n" +
-                "<P>You owe<EM>3.0</EM><P>\n" +
+                "Titanic: 2.0<BR>\n" +
+                "<P>You owe<EM>2.0</EM><P>\n" +
                 "On this rental you earned <EM>1</EM> frequent renter points<P>", statement);
     }
 }
