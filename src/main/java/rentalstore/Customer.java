@@ -30,10 +30,7 @@ public class Customer {
 
             switch (each.getMovie().getPriceCode()){
                 case Movie.REGULAR:
-                    thisAmount += 2;
-                    if(each.getDayRented() > 2){
-                        thisAmount+=(each.getDayRented() - 2) * 1.5;
-                    }
+                    thisAmount += new RegularType().calAmount(each.getDayRented(), thisAmount);
                     break;
                 case Movie.NEW_RELEASE:
                     thisAmount+=each.getDayRented()*3;
@@ -45,6 +42,7 @@ public class Customer {
                         }
                         break;
             }
+
 
             //add frequent renter points
             frequentRenterPoints ++;
