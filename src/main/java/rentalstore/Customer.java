@@ -33,14 +33,14 @@ public class Customer {
                     thisAmount += new RegularType().calAmount(each.getDayRented(), thisAmount);
                     break;
                 case Movie.NEW_RELEASE:
-                    thisAmount+=each.getDayRented()*3;
+                    thisAmount += new NewReleaseType().calAmount(each.getDayRented(), thisAmount);
                     break;
-                    case Movie.CHILDRENS:
-                        thisAmount+=1.5;
-                        if(each.getDayRented() > 3){
-                            thisAmount += (each.getDayRented() -3)*1.5;
-                        }
-                        break;
+                case Movie.CHILDRENS:
+                    thisAmount+=1.5;
+                    if(each.getDayRented() > 3){
+                        thisAmount += (each.getDayRented() -3)*1.5;
+                    }
+                    break;
             }
 
 
