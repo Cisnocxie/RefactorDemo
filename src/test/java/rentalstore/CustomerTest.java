@@ -19,7 +19,7 @@ public class CustomerTest {
 
     @Test
     public void should_return_correct_statement_given_customer_has_rent_one_regular_movie_for_1_day() {
-        Movie regularMovie = new Movie("Titanic", 0);
+        Movie regularMovie = new Movie("Titanic", new RegularType());
         Rental oneDayRental = new Rental(regularMovie, 1);
         customer.addRental(oneDayRental);
 
@@ -35,7 +35,7 @@ public class CustomerTest {
 
     @Test
     public void should_return_correct_statement_given_customer_has_rent_one_regular_movie_for_3_day() {
-        Movie regularMovie = new Movie("Titanic", 0);
+        Movie regularMovie = new Movie("Titanic", new RegularType());
         Rental threeDayRental = new Rental(regularMovie, 3);
         customer.addRental(threeDayRental);
 
@@ -49,7 +49,7 @@ public class CustomerTest {
 
     @Test
     public void should_return_correct_statement_given_customer_has_rent_one_new_release_movie_for_1_day() {
-        Movie newReleaseMovie = new Movie("Titanic", 1);
+        Movie newReleaseMovie = new Movie("Titanic", new NewReleaseType());
         Rental oneDayRental = new Rental(newReleaseMovie, 1);
         customer.addRental(oneDayRental);
 
@@ -63,7 +63,7 @@ public class CustomerTest {
 
     @Test
     public void should_return_correct_statement_given_customer_has_rent_one_new_release_movie_for_2_day() {
-        Movie newReleaseMovie = new Movie("Titanic", 1);
+        Movie newReleaseMovie = new Movie("Titanic", new NewReleaseType());
         Rental twoDayRental = new Rental(newReleaseMovie, 2);
         customer.addRental(twoDayRental);
 
@@ -77,7 +77,7 @@ public class CustomerTest {
 
     @Test
     public void should_return_correct_statement_given_customer_has_rent_one_child_movie_for_1_day() {
-        Movie childrenMovie = new Movie("Titanic", 2);
+        Movie childrenMovie = new Movie("Titanic", new ChildrensType());
         Rental oneDayRental = new Rental(childrenMovie, 1);
         customer.addRental(oneDayRental);
 
@@ -91,7 +91,7 @@ public class CustomerTest {
 
     @Test
     public void should_return_correct_statement_given_customer_has_rent_one_child_movie_for_4_day() {
-        Movie childrenMovie = new Movie("Titanic", 2);
+        Movie childrenMovie = new Movie("Titanic", new ChildrensType());
         Rental fourDayRental = new Rental(childrenMovie, 4);
         customer.addRental(fourDayRental);
 

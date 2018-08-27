@@ -28,23 +28,12 @@ public class Customer {
             double thisAmount =0;
             Rental each = (Rental) rentals.nextElement();
 
-            switch (each.getMovie().getPriceCode()){
-                case Movie.REGULAR:
-                    thisAmount += new RegularType().calAmount(each.getDayRented(), thisAmount);
-                    break;
-                case Movie.NEW_RELEASE:
-                    thisAmount += new NewReleaseType().calAmount(each.getDayRented(), thisAmount);
-                    break;
-                case Movie.CHILDRENS:
-                    thisAmount += new ChildrensType().calAmount(each.getDayRented(), thisAmount);
-                    break;
-            }
-
+            thisAmount += each.getMovie().getMovieType().calAmount(each.getDayRented(), thisAmount);
 
             //add frequent renter points
             frequentRenterPoints ++;
             //add bonus for a two day new release rental
-            if((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDayRented() > 1){
+            if((each.getMovie().getMovieType().getClass() == NewReleaseType.class) && each.getDayRented() > 1){
                 frequentRenterPoints ++;
             }
 
